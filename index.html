@@ -6,9 +6,263 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Summary</title>
 
-    <style></style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+body {
+    background: url('https://assets.codepen.io/6060109/ZigZag.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+h3, h5, h6, a, button {
+    font-family: Montserrat;
+}
+
+h3, h5 {
+    color: #2F463D;
+}
+
+.content-container:nth-of-type(1), 
+.content-container:nth-of-type(3) {
+    display: none;
+}
+
+.content-container {
+    width: 90%;
+    width: 350px;
+    height: 600px;
+    background: #fff;
+    margin: 70px 0;
+    box-shadow: 0px 40px 40px -20px #3C7B61;
+    border-radius: 5px;
+    position: relative;
+    padding: 0 35px;
+}
+
+.close-button {
+    margin: 15px 15px 0 0;
+    background: url('https://assets.codepen.io/6060109/food-close-x.png') no-repeat;
+    border: none;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.content-container > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 100px;
+}
+
+.content-container h3 {
+    text-align: center;
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.content-container p {
+    text-align: center;
+    margin: 20px 20px;
+    line-height: 25px;
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: #828282;
+}
+
+.food-img-container {
+    display: flex;
+    align-items: center;
+    background-color: #f0fff5;
+    border-radius: 5px;
+    margin: 30px 0 30px;
+}
+
+.food-img-name-price {
+    width: 60%;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.food-img-name-price h5 {
+    font-weight: 800;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.food-img-name-price h6 {
+    font-weight: 500;
+    font-size: 14px;
+    color: #7A8F85;
+}
+
+.food-img-container a {
+    color: #467A66;
+    font-weight: bold;
+    font-size: 12px;
+} 
+
+.ready-btn {
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 5px;
+    border: none;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    box-shadow: 0px 20px 20px rgb(103, 189, 153, 0.2);
+    background-color: #46A67E;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 15px;
+    transition: .3s ease all;
+}
+
+.ready-btn:hover {
+    opacity: .8;
+    transition: .3s ease all;
+    cursor: pointer;
+}
+
+.dots-container {
+    display: flex;
+    width: 15%;
+    justify-content: space-between;
+    position: absolute;
+    left: 50%;
+    bottom: 6%;
+    transform: translateX(-50%);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #E0E0E0;
+    border-radius: 100%;
+}
+
+.dots-container .green {
+    background-color: #67BD99;
+}
+
+@media only screen and (min-width: 992px) {
+    .content-container:nth-of-type(1), 
+    .content-container:nth-of-type(3) {
+        display: initial;
+    }
+
+    .content-container {
+        width: 450px;
+        height: 700px;
+        justify-content: space-evenly;
+    }
+
+    .content-container:nth-of-type(2) {
+        height: 750px;
+        margin: 50px -30px auto -30px;
+        z-index: 1;
+    }
+
+    .content-container:nth-of-type(2) > img {
+        width: 150px;
+        height: 250px;
+    }
+
+    .content-container h3 {
+        margin-top: 50px; 
+        font-size: 28px;   
+    }
+
+    .content-container p {
+        margin: 30px 20px;    
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;  
+    }
+    .content-container:nth-of-type(1) p, 
+    .content-container:nth-of-type(3) p {
+        margin-top: 70px;
+    }
+
+    .content-container:nth-of-type(1) > .ready-btn, 
+    .content-container:nth-of-type(3) > .ready-btn {
+        background-color: #BDBDBD;
+        position: absolute;
+        left: 50%;
+        bottom: 13%;
+        transform: translateX(-50%);
+        width: 80%;
+    }
+} 
+    </style>
+
 </head>
 <body>
+    <body>
+        <div class= "content-container">
+            <button class="close-button"></button>       
+            <img src="https://assets.codepen.io/6060109/hamburger+1.png">
+            <h3>Choose a Dish</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis duis posuere accumsan, in ut vel iaculis fusce posuere.</p>
+            <button class="ready-btn">Next →</button>
+            
+            <div class="dots-container">
+                <div class="dot green"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div> 
     
+        <div class="content-container">
+            <button class="close-button"></button>       
+            <img src="https://assets.codepen.io/6060109/food-happy.png">
+            <h3>Confirmation</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis duis posuere accumsan, in ut vel iaculis fusce posuere.</p>
+            <div class="food-img-container">
+                <img src="https://assets.codepen.io/6060109/Rectangle.png" alt="hamburger">
+                <div class="food-img-name-price">
+                    <h5>Big Mac Menu</h5>
+                    <h6>$29.99</h6>
+                </div>        
+                <a href="#">Change</a>
+            </div>
+            <button class="ready-btn">I'm ready to Eat!</button>
+            
+            <div class="dots-container">
+                <div class="dot"></div>
+                <div class="dot green"></div>
+                <div class="dot"></div>
+            </div>
+        </div>    
+    
+        <div class= "content-container">
+            <button class="close-button"></button>       
+            <img src="https://assets.codepen.io/6060109/delivery-man+1.png">
+            <h3>Your order process begins</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis duis posuere accumsan, in ut vel iaculis fusce posuere.</p>
+            <button class="ready-btn">Track on the map</button>
+            
+            <div class="dots-container">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot green"></div>
+            </div>
+        </div> 
+    </body>
 </body>
 </html>

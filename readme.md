@@ -10,12 +10,16 @@
 
 ## Overview
 
+Build the site from the figma design provided. 
+
 ### Screenshot
 
 Desktop view -> ![](./screenshots/desktop.png)
 Mobile view -> ![](./screenshots/mobile.png)
 
 ## My process
+
+Is to start with the mobile 
 
 ### Built with
 
